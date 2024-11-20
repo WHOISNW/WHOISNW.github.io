@@ -493,12 +493,14 @@ section {
         border-bottom-left-radius: 2rem;
         border-left: 2px solid var(--main-color);
         border-bottom: 2px solid var(--main-color);
+        display: none;
     }
 
     .navbar a {
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
+        color: var(--text-color)
     }
 }
 
@@ -533,7 +535,7 @@ section {
     }
 
     .navbar.active {
-        display: flex;
+        display: block;
     }
 
     #menu-icon.active {
@@ -541,8 +543,9 @@ section {
     }
 
     .home {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: column-reverse;
+        margin: 5rem 0;
+        gap: 5rem;
     }
 
     .home-content {
@@ -551,7 +554,7 @@ section {
     }
 
     .home-img img {
-        width: 50vw;
+        width: 56vw;
     }
 }
 
@@ -561,6 +564,18 @@ section {
     }
 
     .home-img img {
-        width: 60vw;
+        width: 56vw;
     }
+}
+.about{
+    flex-direction: column-reverse;
+    text-align: center;
+}
+.about h2{
+    text-align: center;
+    margin: 2rem 0;
+
+}
+.about img{
+    width: 52vw;
 }
