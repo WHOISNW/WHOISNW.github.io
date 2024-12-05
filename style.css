@@ -395,53 +395,53 @@ section {
 .projects-card {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers the content horizontally */
-    justify-content: center; /* Centers the content vertically */
+    align-items: center;
+    justify-content: center;
     text-align: center;
     
-    width: 90%; /* Gjør bredden dynamisk for små skjermer */
-    max-width: 600px; /* Setter en maks bredde for større skjermer */
-    height: auto; /* Allows the card to adjust to content height */
+    width: 90%;
+    max-width: 600px; /* Maksimal bredde for større skjermer */
+    height: auto;
     
-    background-color: var(--bg-color); /* Background color from your theme */
-    border: 2px solid var(--main-color); /* Smaller border that fits */
-    border-radius: 2rem; /* Slight rounding for the card */
+    background-color: var(--bg-color);
+    border: 2px solid var(--main-color);
+    border-radius: 2rem;
     
-    padding: 1.5rem; /* Reduced padding for a smaller appearance */
-    gap: 1.5rem; /* Space between elements */
-    overflow: hidden; /* Prevent content from spilling out */
-    cursor: pointer; /* Indicates the card is clickable */
+    padding: 1.5rem;
+    gap: 1.5rem;
+    overflow: hidden;
+    cursor: pointer;
     
-    box-shadow: 0 0 5px var(--main-color); /* Light shadow effect */
-    transition: 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 0 5px var(--main-color);
+    transition: 0.3s ease;
 }
 
 .projects-card:hover {
     box-shadow: 0 0 25px var(--main-color),
-                0 0 50px var(--main-color); /* Larger shadow on hover */
-    transform: scale(1.02); /* Slight scaling on hover */
+                0 0 50px var(--main-color);
+    transform: scale(1.02);
 }
 
 .projects-card img {
-    max-width: 100%; /* Sikrer at bildet ikke overstiger kortets bredde */
-    height: auto; /* Bevarer proporsjonene */
-    border-radius: 1.5rem; /* Rounded corners for the image */
-    object-fit: cover; /* Image covers its container without distortion */
-    transition: 0.3s ease; /* Smooth transition for hover effect */
+    max-width: 100%;
+    height: auto;
+    border-radius: 1.5rem;
+    object-fit: cover;
+    transition: 0.3s ease;
 }
 
 .projects-card img:hover {
-    transform: scale(1.05); /* Slight zoom effect on image hover */
+    transform: scale(1.05);
 }
 
 .projects-card h3 {
-    font-size: 2rem; /* Reduced font size for the heading */
-    margin: 0; /* Remove default margin */
+    font-size: 2rem;
+    margin: 0;
 }
 
 .projects-card p {
-    font-size: 1.4rem; /* Reduced font size for the paragraph */
-    margin: 0; /* Remove default margin */
+    font-size: 1.4rem;
+    margin: 0;
 }
 
 /* RESPONSIVE STYLING */
@@ -450,10 +450,10 @@ section {
 @media (max-width: 991px) {
     .projects-card {
         width: 100%; /* Bruk hele bredden til skjermen */
-        padding: 1rem; /* Reduser padding for mindre skjermstørrelser */
+        padding: 1rem; /* Redusert padding */
     }
     .projects-card img {
-        max-width: 70%; /* Begrens bildestørrelsen */
+        max-width: 60%; /* Begrens bildets størrelse på nettbrett */
     }
 }
 
@@ -464,13 +464,13 @@ section {
         padding: 1rem;
     }
     .projects-card img {
-        max-width: 90%; /* Enda mindre bilde på mobil */
+        max-width: 80%; /* Bilder er fortsatt litt større på mobil, men ikke for store */
     }
     .projects-card h3 {
-        font-size: 1.8rem; /* Juster overskriftsstørrelsen */
+        font-size: 1.8rem;
     }
     .projects-card p {
-        font-size: 1.2rem; /* Juster tekststørrelsen */
+        font-size: 1.2rem;
     }
 }
 
