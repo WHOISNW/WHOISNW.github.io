@@ -399,7 +399,8 @@ section {
     justify-content: center; /* Centers the content vertically */
     text-align: center;
     
-    width: 600px; /* Set a fixed width for a smaller card */
+    width: 90%; /* Gjør bredden dynamisk for små skjermer */
+    max-width: 600px; /* Setter en maks bredde for større skjermer */
     height: auto; /* Allows the card to adjust to content height */
     
     background-color: var(--bg-color); /* Background color from your theme */
@@ -422,12 +423,10 @@ section {
 }
 
 .projects-card img {
-    max-width: 50%; /* Ensure image scales to fit the card */
-    height: auto;
-    
+    max-width: 100%; /* Sikrer at bildet ikke overstiger kortets bredde */
+    height: auto; /* Bevarer proporsjonene */
     border-radius: 1.5rem; /* Rounded corners for the image */
     object-fit: cover; /* Image covers its container without distortion */
-    
     transition: 0.3s ease; /* Smooth transition for hover effect */
 }
 
@@ -443,6 +442,36 @@ section {
 .projects-card p {
     font-size: 1.4rem; /* Reduced font size for the paragraph */
     margin: 0; /* Remove default margin */
+}
+
+/* RESPONSIVE STYLING */
+
+/* For nettbrett */
+@media (max-width: 991px) {
+    .projects-card {
+        width: 100%; /* Bruk hele bredden til skjermen */
+        padding: 1rem; /* Reduser padding for mindre skjermstørrelser */
+    }
+    .projects-card img {
+        max-width: 70%; /* Begrens bildestørrelsen */
+    }
+}
+
+/* For mobil */
+@media (max-width: 767px) {
+    .projects-card {
+        width: 100%; /* Full bredde for mobil */
+        padding: 1rem;
+    }
+    .projects-card img {
+        max-width: 90%; /* Enda mindre bilde på mobil */
+    }
+    .projects-card h3 {
+        font-size: 1.8rem; /* Juster overskriftsstørrelsen */
+    }
+    .projects-card p {
+        font-size: 1.2rem; /* Juster tekststørrelsen */
+    }
 }
 
 
