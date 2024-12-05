@@ -478,74 +478,137 @@ section {
     margin-top: 40px;
 }
 
-@media (max-width: 1285px) {
-    #menu-icon {
-        display: block;
-    }
-
-    .navbar {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 50%;
-        padding: 1rem 3rem;
-        background: rgba(0, 0, 0, 0.8);
-        border-bottom-left-radius: 2rem;
-        border-left: 2px solid var(--main-color);
-        border-bottom: 2px solid var(--main-color);
-        display: none;
-    }
-
-    .navbar a {
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-        color: var(--text-color)
-    }
+/* Generelle stiler */
+#menu-icon {
+    display: none; /* Skjult som standard */
+    font-size: 2.5rem;
+    color: var(--main-color);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    cursor: pointer;
+    z-index: 10; /* Over andre elementer */
 }
 
+.navbar {
+    display: none; /* Skjult som standard */
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 50%; /* Standard bredde */
+    padding: 1rem 3rem;
+    border-bottom-left-radius: 2rem;
+    border-left: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+    z-index: 5;
+    transition: all 0.3s ease-in-out; /* Glatt overgang for visning */
+}
+
+.navbar a {
+    display: block;
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: var(--main-color); /* Effekt på hover */
+}
+
+.navbar.active {
+    display: flex; /* Vises når aktiv */
+    width: 100%; /* Full bredde på mindre skjermer */
+    padding: 2rem;
+    top: 6rem; /* Justeres for menyikonets høyde */
+    left: 0; /* Sentrer navbar */
+}
+
+/* Hjemmesideinnhold */
+.home {
+    display: flex;
+    flex-direction: row; /* Standard rekkefølge */
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-content h1 {
+    font-size: 4rem; /* Standard størrelse */
+}
+
+.home-content h3 {
+    font-size: 2.5rem; /* Standard størrelse */
+}
+
+.home-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Om-seksjon */
+.about {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.about h2 {
+    text-align: left;
+    margin: 2rem 0;
+}
+
+.about img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsiv design */
+
+/* Tablet: 992px til 1199px */
 @media (max-width: 1199px) and (min-width: 992px) {
     .home-content h1 {
         font-size: 3.5rem;
     }
+
     .home-content h3 {
         font-size: 2rem;
     }
+
     .home-img img {
         width: 35vw;
     }
 }
 
+/* Tablet: 768px til 991px */
 @media (max-width: 991px) and (min-width: 768px) {
     #menu-icon {
-        display: block;
-        font-size: 2.5rem;
+        display: block; /* Aktiver menyikon */
     }
 
     .navbar {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.9);
         position: absolute;
         top: 6rem;
         left: 0;
-        width: 100%;
-        padding: 2rem;
-    }
-
-    .navbar.active {
-        display: block;
-    }
-
-    #menu-icon.active {
-        color: var(--main-color);
+        width: 100%; /* Full bredde */
+        border-radius: 0 0 1rem 1rem;
     }
 
     .home {
         flex-direction: column-reverse;
-        margin: 5rem 0;
         gap: 5rem;
+        margin: 5rem 0;
     }
 
     .home-content {
@@ -556,26 +619,42 @@ section {
     .home-img img {
         width: 56vw;
     }
+
+    .about {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .about img {
+        width: 52vw;
+    }
+
+    .about h2 {
+        text-align: center;
+    }
 }
 
+/* Mobil: 767px og mindre */
 @media (max-width: 767px) {
     .home {
         flex-direction: column;
+        gap: 3rem;
     }
 
     .home-img img {
-        width: 56vw;
+        width: 65vw;
     }
-}
-.about{
-    flex-direction: column-reverse;
-    text-align: center;
-}
-.about h2{
-    text-align: center;
-    margin: 2rem 0;
 
-}
-.about img{
-    width: 52vw;
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about img {
+        width: 65vw;
+    }
+
+    .about h2 {
+        margin: 2rem 0;
+    }
 }
