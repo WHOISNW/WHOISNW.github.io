@@ -395,11 +395,11 @@ section {
 .projects-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Sentraliserer horisontalt */
+    justify-content: center; /* Sentraliserer vertikalt */
     text-align: center;
     
-    width: 90%;
+    width: 90%; /* Dynamisk bredde for små skjermer */
     max-width: 600px; /* Maksimal bredde for større skjermer */
     height: auto;
     
@@ -423,15 +423,16 @@ section {
 }
 
 .projects-card img {
-    max-width: 100%;
+    max-width: 100%; /* Sikrer at bildet tilpasser kortets bredde */
     height: auto;
     border-radius: 1.5rem;
-    object-fit: cover;
+    object-fit: cover; /* Bildet dekker kortet uten å bli forvrengt */
     transition: 0.3s ease;
+    margin: 0 auto; /* Sentraliserer bildet horisontalt */
 }
 
 .projects-card img:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Zoom-effekt på bilde ved hover */
 }
 
 .projects-card h3 {
@@ -449,11 +450,28 @@ section {
 /* For nettbrett */
 @media (max-width: 991px) {
     .projects-card {
-        width: 100%; /* Bruk hele bredden til skjermen */
-        padding: 1rem; /* Redusert padding */
+        width: 100%; /* Full bredde på nettbrett */
+        padding: 1rem;
     }
     .projects-card img {
-        max-width: 60%; /* Begrens bildets størrelse på nettbrett */
+        max-width: 60%; /* Redusert størrelse på bilde på nettbrett */
+    }
+}
+
+/* For mobil */
+@media (max-width: 767px) {
+    .projects-card {
+        width: 100%; /* Full bredde for mobil */
+        padding: 1rem;
+    }
+    .projects-card img {
+        max-width: 80%; /* Bilde blir mindre på mobil */
+    }
+    .projects-card h3 {
+        font-size: 1.8rem;
+    }
+    .projects-card p {
+        font-size: 1.2rem;
     }
 }
 
